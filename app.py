@@ -1,11 +1,13 @@
+import joblib
 from flask import Flask, request, render_template
 import pickle
 
 app = Flask(__name__)
 
-model_file = open('model_nb.pkl', 'rb')
-model = pickle.load(model_file)
+'''model_file = open('model_nb.pkl', 'rb')
+model = pickle.load(model_file)'''
 
+model = joblib.load('finalized_model.sav')
 
 @app.route('/')
 def index():
