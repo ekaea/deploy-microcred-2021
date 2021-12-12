@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <title>Prediksi Indeks Pencemaran Lingkungan DKI Jakarta</title>
+    </head>
+    <body
+        class="
+            flex flex-col
+            justify-between
+            item-center
+            p-8
+            min-h-screen
+            bg-gradient-to-r
+            from-red-400
+            to-yellow-500
+            text-gray-800
+            md:flex-row
+        "
+    >
+        <main class="bg-white p-16 rounded-lg">
+            <h1 class="text-3xl font-bold mb-8">
+                Prediksi Indeks Pencemaran Udara
+            </h1>
+
+            <form
+                action="{{ url_for('predict') }}"
+                method="post"
+                class="flex flex-col"
+            >
+                <label for="pm10" class="mb-2">PM10</label>
+                <input
+                    type="number"
+                    name="pm10"
+                    placeholder="PM10"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="so2" class="mb-2">SO2</label>
+                <input
+                    type="number"
+                    name="so2"
+                    placeholder="S02"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="co" class="mb-2">CO</label>
+                <input
+                    type="number"
+                    name="co"
+                    placeholder="CO"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="o3" class="mb-2">O3</label>
+                <input
+                    type="number"
+                    name="o3"
+                    placeholder="O3"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="no2" class="mb-2">NO2</label>
+                <input
+                    type="number"
+                    name="no2"
+                    placeholder="NO2"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="max" class="mb-2">Max</label>
+                <input
+                    type="number"
+                    name="max"
+                    placeholder="Max"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+
+                <label for="critical" class="mb-2">Critical</label>
+                <input
+                    type="number"
+                    name="critical"
+                    placeholder="Critical"
+                    required="required"
+                    class="p-4 bg-gray-100 rounded-md"
+                />
+                <button
+                    type="submit"
+                    class="
+                        flex
+                        justify-center
+                        align-center
+                        mt-8
+                        p-4
+                        bg-gradient-to-r
+                        from-red-400
+                        to-yellow-500
+                        text-white
+                        rounded-md
+                    "
+                >
+                    PREDIKSI SEKARANG
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-arrow-right ml-4"
+                    >
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+        </main>
+        <section class="mt-8 h-full flex-auto rounded-lg md:mt-0 md:ml-8">
+            <div class="bg-white p-16 rounded-lg">
+                <h1 class="text-2xl mb-8">
+                    Prediksi Kategori Indeks Pencemaran Udara
+                </h1>
+                <h2 class="text-5xl font-bold">Kategori {{ categori_pred }}</h2>
+                <!-- {% if (insurance_cost) != 0 %} -->
+                <div class="mt-8">
+                    <br>
+                        <p><b> Keterangan Kategori </b></p>
+                        <p> 0 = Tidak Sehat </p>
+                        <p> 1 = Sehat </p>
+                        <p> 2 = Sedang </p>
+                    <br>
+                    <p>PM10: {{ pm10 }} </p>
+                    <p>SO2: {{ so2 }}</p>
+                    <p>CO: {{ co }}</p>
+                    <p>O3: {{ o3 }}</p>
+                    <p>NO2: {{ no2 }}</p>
+                    <p>Max: {{ max }}</p>
+                    <p>Critical: {{ critical }}</p>
+                </div>
+                <!-- {% endif %} -->
+        </section>
+    </body>
+</html>
