@@ -7,8 +7,8 @@ Our Team:
 - Eka Agustina
 - Slamet Mahendra 
 
-This project aims to predict whether the air in an area is categorized as healthy, unhealthy and moderate.
+This project aims to predict whether the air in an area is categorized as healthy, unhealthy and moderate. <br>
 Dataset :  https://data.jakarta.go.id/dataset/indeks-standar-pencemaran-udara-ispu-tahun-2020 <br>
-Deploy :  https://cimoong-deploy-microcred-2021.herokuapp.com/
+Deploy :  https://cimoong-deploy-microcred-2021.herokuapp.com/ <br>
 Youtube : https://www.youtube.com/watch?v=gIs79Q6vwxU
 
